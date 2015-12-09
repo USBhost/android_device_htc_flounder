@@ -167,6 +167,11 @@ PRODUCT_COPY_FILES += \
     device/htc/flounder/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/htc/flounder/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
 
+# apns.conf and old-apns.conf
+PRODUCT_COPY_FILES += \
+    device/htc/flounder/apns-conf.xml:system/etc/apns-conf.xml \
+    device/htc/flounder/old-apns-conf.xml:system/etc/old-apns-conf.xml
+
 PRODUCT_AAPT_CONFIG := normal large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
