@@ -247,6 +247,9 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-threads=1
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.recents.grid=true
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger \
