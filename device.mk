@@ -217,8 +217,7 @@ PRODUCT_PACKAGES += \
     lights.flounder \
     sensors.flounder \
     thermal.flounder \
-    android.hardware.thermal@1.0-impl \
-    hwcomposer.flounder
+    android.hardware.thermal@1.0-impl
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
