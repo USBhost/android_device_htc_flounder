@@ -17,6 +17,7 @@
 PRODUCT_PACKAGES := \
     libwpa_client \
     hostapd \
+    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -192,6 +193,16 @@ PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     NfcNci \
     Tag \
+    android.hardware.nfc@1.0-impl
+
+ifeq ($(ENABLE_TREBLE), true)
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-service
+endif
+
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -201,7 +212,8 @@ PRODUCT_PACKAGES += \
     power.flounder \
     lights.flounder \
     sensors.flounder \
-    thermal.flounder
+    thermal.flounder \
+    hwcomposer.flounder
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
