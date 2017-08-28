@@ -12,8 +12,6 @@
 /dev/constraint_gpu_freq	u:object_r:gpu_freq_device:s0
 # enable UART port permission
 /dev/ttyTHS2			u:object_r:hci_attach_dev:s0
-# nfc
-/dev/bcm2079x			u:object_r:nfc_device:s0
 # camera devices
 /dev/camera.pcl			u:object_r:camera_device:s0
 /dev/nvhost-ctrl-vi.*		u:object_r:camera_device:s0
@@ -34,7 +32,6 @@
 /dev/tfa9895                    u:object_r:audio_device:s0
 /dev/tfa9895l                   u:object_r:audio_device:s0
 
-/data/nfc(/.*)?			u:object_r:nfc_data_file:s0
 /data/nvcam(/.*)?		u:object_r:camera_data_file:s0
 
 # gps

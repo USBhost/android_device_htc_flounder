@@ -39,10 +39,6 @@ on post-fs-data
     chown cameraserver camera /data/nvcam/nvcam_cache_1.bin
     mkdir /data/nvcam 0700 cameraserver camera
 
-    # NFC: create data/nfc for nv storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
     # secure os storage
     mkdir /data/ss 0700 system system
 
