@@ -197,6 +197,10 @@ PRODUCT_PACKAGES += \
     thermal.flounder \
     android.hardware.thermal@1.0-impl
 
+# Dumpstate HAL
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.0-service.flounder
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     fsck.f2fs mkfs.f2fs
