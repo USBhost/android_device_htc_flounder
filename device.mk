@@ -14,19 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_PACKAGES := \
-    libwpa_client \
-    hostapd \
-    wificond \
-    wpa_supplicant \
-    wpa_supplicant.conf
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-ifeq ($(USE_SVELTE_KERNEL), true)
-LOCAL_KERNEL := device/htc/flounder_svelte-kernel/Image.gz-dtb
-else
 LOCAL_KERNEL := device/htc/flounder-kernel/Image.gz-dtb
-endif # USE_SVELTE_KERNEL
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -51,14 +40,6 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/init.recovery.flounder.rc:root/init.recovery.flounder.rc \
     $(LOCAL_FSTAB):root/fstab.flounder \
     $(LOCAL_PATH)/ueventd.flounder.rc:root/ueventd.flounder.rc
-
-# Copy flounder files as flounder64 so that ${ro.hardware} can find them
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.flounder.rc:root/init.flounder64.rc \
-    $(LOCAL_PATH)/init.flounder.usb.rc:root/init.flounder64.usb.rc \
-    $(LOCAL_FSTAB):root/fstab.flounder64 \
-    $(LOCAL_PATH)/init.recovery.flounder.rc:root/init.recovery.flounder64.rc \
-    $(LOCAL_PATH)/ueventd.flounder.rc:root/ueventd.flounder64.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/touch/touch_fusion.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/touch_fusion.cfg \
@@ -356,17 +337,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor seccomp policy files for media components:
 PRODUCT_COPY_FILES += \
     device/htc/flounder/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
-
-# In userdebug, add minidebug info the the boot image and the system server to support
-# diagnosing native crashes.
-ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
-    # Boot image.
-    PRODUCT_DEX_PREOPT_BOOT_FLAGS += --generate-mini-debug-info
-    # System server and some of its services.
-    # Note: we cannot use PRODUCT_SYSTEM_SERVER_JARS, as it has not been expanded at this point.
-    $(call add-product-dex-preopt-module-config,services,--generate-mini-debug-info)
-    $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
-endif
 
 # add verity dependencies
 $(call inherit-product, build/target/product/verity.mk)
