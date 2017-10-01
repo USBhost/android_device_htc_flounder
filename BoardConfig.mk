@@ -17,20 +17,11 @@
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := denver64
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := denver
-
-# Disable emulator for "make dist" until there is a 64-bit qemu kernel
-BUILD_EMULATOR := false
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := denver
 
 TARGET_NO_BOOTLOADER := true
 
@@ -62,8 +53,6 @@ BOARD_USES_GENERIC_INVENSENSE := false
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so
-BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a15
-BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/flounder/bluetooth

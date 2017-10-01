@@ -116,7 +116,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/bcm/gps.bcm47521.conf:system/etc/gps.bcm47521.conf \
     $(LOCAL_PATH)/gps/bcm/glgps:system/bin/glgps \
     $(LOCAL_PATH)/gps/bcm/gpsconfig.xml:system/etc/gpsconfig.xml \
-    $(LOCAL_PATH)/gps/bcm/lib64/gps.bcm47521.so:system/lib64/hw/gps.bcm47521.so
+    $(LOCAL_PATH)/gps/bcm/lib64/gps.bcm47521.so:system/lib/hw/gps.bcm47521.so
 
 # GPS: QCT MODULES
 PRODUCT_COPY_FILES += \
@@ -129,17 +129,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/qct/lib/libloc_ds_api.so:system/lib/libloc_ds_api.so \
     $(LOCAL_PATH)/gps/qct/lib/libloc_eng.so:system/lib/libloc_eng.so \
     $(LOCAL_PATH)/gps/qct/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libgeofence.so:system/lib64/libgeofence.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libgps.utils.so:system/lib64/libgps.utils.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libloc_api_v02.so:system/lib64/libloc_api_v02.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libloc_core.so:system/lib64/libloc_core.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libloc_ds_api.so:system/lib64/libloc_ds_api.so \
-    $(LOCAL_PATH)/gps/qct/lib64/libloc_eng.so:system/lib64/libloc_eng.so \
-    $(LOCAL_PATH)/gps/qct/lib64/hw/gps.default.so:system/lib64/hw/gps.default.so \
     $(LOCAL_PATH)/gps/qct/lib_vendor/libmdmdetect.so:vendor/lib/libmdmdetect.so \
-    $(LOCAL_PATH)/gps/qct/lib_vendor/libperipheral_client.so:vendor/lib/libperipheral_client.so \
-    $(LOCAL_PATH)/gps/qct/lib64_vendor/libmdmdetect.so:vendor/lib64/libmdmdetect.so \
-    $(LOCAL_PATH)/gps/qct/lib64_vendor/libperipheral_client.so:vendor/lib64/libperipheral_client.so
+    $(LOCAL_PATH)/gps/qct/lib_vendor/libperipheral_client.so:vendor/lib/libperipheral_client.so
 
 
 # NFC feature + config files
