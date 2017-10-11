@@ -163,6 +163,10 @@ DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay
 endif
 
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    device/htc/flounder/bootanimation.zip:system/media/bootanimation.zip
+
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
     libbt-vendor \
